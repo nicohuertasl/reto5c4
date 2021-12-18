@@ -10,8 +10,8 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/clone")
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
+@RequestMapping("/api/cleaningprod")
+@CrossOrigin("*")
 public class ProductController {
     @Autowired
     private ProductService productService;
@@ -43,12 +43,20 @@ public class ProductController {
     public boolean delete(@PathVariable("id") int id){
         return productService.delete(id);
     }
-
+/**
+ * reto5
+ * @param price
+ * @return 
+ */
     @GetMapping("/price/{price}")
     public List<Product> getByPrice(@PathVariable("price") double price){
         return productService.getByPrice(price);
     }
-
+/**
+ * reto5
+ * @param description
+ * @return 
+ */
     @GetMapping("/description/{description}")
     public List<Product> getByDescriptionContains(@PathVariable("description") String description){
         return productService.getByDescriptionContains(description);
