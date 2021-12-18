@@ -9,19 +9,25 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "products")
+@Document(collection = "cleaningproducts")
 public class Product {
-    @Id
-    private Integer id;
-    private String brand;
-    private String procesor;
-    private String os;
-    private String description;
-    private String memory;
-    private String hardDrive;
-    private boolean availability;
-    private double price;
-    private Integer quantity;
-    private String photography;
+   @Id
+private Integer id;
+
+private String brand;
+
+private String category;
+
+private String name;
+
+private String description;
+
+private double price;
+
+private boolean availability = true;
+
+private int quantity;
+
+private String photography;
 
 }
