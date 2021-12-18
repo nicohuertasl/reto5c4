@@ -35,20 +35,16 @@ public class ProductService {
                 if (product.getBrand()!= null){
                     dbProduct.get().setBrand(product.getBrand());
                 }
-                if (product.getProcesor()!= null){
-                    dbProduct.get().setProcesor(product.getProcesor());
-                }
-                if (product.getOs()!= null){
-                    dbProduct.get().setOs(product.getOs());
-                }
+                
+                
                 if (product.getDescription() != null){
                     dbProduct.get().setDescription(product.getDescription());
                 }
-                if (product.getMemory()!= null){
-                    dbProduct.get().setMemory(product.getMemory());
+                if (product.getName()!= null){
+                    dbProduct.get().setName(product.getName());
                 }
-                if (product.getHardDrive()!= null){
-                    dbProduct.get().setHardDrive(product.getHardDrive());
+                if (product.getCategory()!= null){
+                    dbProduct.get().setCategory(product.getCategory());
                 }
 
                 dbProduct.get().setAvailability(product.isAvailability());
@@ -82,7 +78,11 @@ public class ProductService {
     public List<Product> getByPrice(double price){
         return productRepository.getByPrice(price);
     }
-
+/**
+ * 
+ * @param description
+ * @return 
+ */
     public List<Product> getByDescriptionContains(String description){
         return productRepository.getByDescriptionContains(description);
     }
